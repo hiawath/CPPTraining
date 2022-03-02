@@ -15,60 +15,69 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RandNum.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ch1.cpp">
+    <ClCompile Include="Simple.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ask.cpp">
+    <ClCompile Include="Time.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="timeTest.cpp">
+    <ClCompile Include="Car.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="human.cpp">
+    <ClCompile Include="Date.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SomeRef.cpp">
+    <ClCompile Include="Time2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="NewHuman.cpp">
+    <ClCompile Include="TimeFriend.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Some.cpp">
+    <ClCompile Include="DateFriend.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DateMember.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeMember.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cursor.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="RandNum.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="main.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="ask.h">
+    <ClInclude Include="Simple.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="timeTest.h">
+    <ClInclude Include="Time.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="human.h">
+    <ClInclude Include="Car.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="SomeRef.h">
+    <ClInclude Include="cursor.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="NewHuman.h">
+    <ClInclude Include="Date.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Some.h">
+    <ClInclude Include="Time2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeFriend.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DateFriend.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DateMember.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeMember.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPTraining", "CPPTraining\CPPTraining.vcxproj", "{196BD65C-BEDD-4971-AE10-6CAC06F51713}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch4캡슐화", "ch4캡슐화\ch4캡슐화.vcxproj", "{1313205E-7DF3-4CBE-9F7F-06607290CD82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{196BD65C-BEDD-4971-AE10-6CAC06F51713}.Release|x64.Build.0 = Release|x64
 		{196BD65C-BEDD-4971-AE10-6CAC06F51713}.Release|x86.ActiveCfg = Release|Win32
 		{196BD65C-BEDD-4971-AE10-6CAC06F51713}.Release|x86.Build.0 = Release|Win32
+		{1313205E-7DF3-4CBE-9F7F-06607290CD82}.Debug|x64.ActiveCfg = Debug|x64
+		{1313205E-7DF3-4CBE-9F7F-06607290CD82}.Debug|x64.Build.0 = Debug|x64
+		{1313205E-7DF3-4CBE-9F7F-06607290CD82}.Debug|x86.ActiveCfg = Debug|Win32
+		{1313205E-7DF3-4CBE-9F7F-06607290CD82}.Debug|x86.Build.0 = Debug|Win32
+		{1313205E-7DF3-4CBE-9F7F-06607290CD82}.Release|x64.ActiveCfg = Release|x64
+		{1313205E-7DF3-4CBE-9F7F-06607290CD82}.Release|x64.Build.0 = Release|x64
+		{1313205E-7DF3-4CBE-9F7F-06607290CD82}.Release|x86.ActiveCfg = Release|Win32
+		{1313205E-7DF3-4CBE-9F7F-06607290CD82}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
