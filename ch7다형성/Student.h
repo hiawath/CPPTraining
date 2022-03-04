@@ -9,7 +9,7 @@ public:
 	Student(const char* aname, int aage, int astunum) : Human(aname, aage) {
 		stunum = astunum;
 	}
-	void intro() {
+	void intro() override {
 		printf("%d학번 %s입니다.\n", stunum, name);
 	}
 	virtual void study() {

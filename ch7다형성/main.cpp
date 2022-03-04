@@ -6,6 +6,12 @@ void IntroSomeBody(Human* pH) {
 
 int main()
 {
+	Base* pB;
+	pB = new Derived;
+
+	delete pB;
+
+
 	/*
 	Point p(1, 1, 'P');
 	Circle2 c(20, 10, 'C', 12);
@@ -18,26 +24,14 @@ int main()
 	_getch();
 	c.move(40, 10);
 	_getch();
-	*/
-	Shape* pS[3];
-
-	pS[0] = new Line;
-	pS[1] = new Circle;
-	pS[2] = new Rect;
-
-	for (size_t i = 0; i < 3; i++)
-	{
-		pS[i]->draw();
-	}
-
-	for (size_t i = 0; i < 3; i++)
-	{
-		delete pS[i];
-	}
 	
-
+	*/
 	/*
-	Shape* ar[] = { new Shape(), new Rect(), new Circle(), new Rect(), new Line() };
+	Rect r =  Rect();
+	r.draw();
+	r.test();
+	
+	Shape* ar[] = { new Rect(), new Circle(), new Rect(), new Line() };
 
 	for (int i = 0; i < sizeof(ar) / sizeof(ar[0]); i++) {
 		ar[i]->draw();
@@ -45,10 +39,10 @@ int main()
 	for (int i = 0; i < sizeof(ar) / sizeof(ar[0]); i++) {
 		delete ar[i];
 	}
+	
+
+
 	*/
-
-
-
 	/*
 	Human h("김사람", 10);
 	Student s("이학생", 15, 1234567);

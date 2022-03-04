@@ -1,9 +1,8 @@
 #pragma once
-#include <stdio.h>
-#include <string.h>
 
 #include <stdio.h>
 #include <string.h>
+
 
 class Human
 {
