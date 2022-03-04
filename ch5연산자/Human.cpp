@@ -30,7 +30,8 @@ Human& Human::operator =(const Human& other) {
 }
 */
 Human::~Human() {
-	if (this->pname != (-35))
+//TODO list	
+	if (true)
 	{
 		delete[] pname;
 		pname = NULL;
