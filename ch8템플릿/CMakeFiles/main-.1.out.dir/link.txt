@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -static -Wl,--gc-sections -DDEBUG -DLINKER_FLAGS -rdynamic CMakeFiles/main-.1.out.dir/main.cpp.o CMakeFiles/main-.1.out.dir/Max.cpp.o CMakeFiles/main-.1.out.dir/Swap.cpp.o CMakeFiles/main-.1.out.dir/SwapArray.cpp.o CMakeFiles/main-.1.out.dir/Cast.cpp.o  -o Debug/main-.1.out -lm 

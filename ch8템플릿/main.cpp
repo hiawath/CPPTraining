@@ -3,12 +3,7 @@
 
 int main() {
 
-	char sss[] = {"¡Úhellow"};// "¡Ú" ;
-	for (size_t i = 0; i < sizeof(sss); i++)
-	{
-		printf("Test : %lc ", sss[i]);
-	}
-	std::cout << std::endl;
+	
 
 	std::vector<int> v;
 
@@ -38,7 +33,7 @@ int main() {
 	printf("u = %d, d = %f\n", un, dou);
 
 	int aaa[] = { 1,2,3 }, bbb[] = { 4,5,6 };
-	char ccc[] = "¹®ÀÚ¿­", ddd[] = "string";
+	char ccc[] = "ï¿½Ú¿ï¿½", ddd[] = "string";
 	swaparray(aaa, bbb, sizeof(a) / sizeof(aaa[0]));
 	printf("before c = %s,d = %s\n", ccc, ddd);
 	swaparray(ccc, ddd, sizeof(c) / sizeof(ccc[0]));

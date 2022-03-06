@@ -1,0 +1,3 @@
+/home/runner/CPPTraining/ch8템플릿/CMakeFiles/rebuild_cache.dir
+/home/runner/CPPTraining/ch8템플릿/CMakeFiles/main-.1.out.dir
+/home/runner/CPPTraining/ch8템플릿/CMakeFiles/edit_cache.dir
