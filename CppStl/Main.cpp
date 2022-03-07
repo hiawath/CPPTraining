@@ -4,6 +4,14 @@ void list42();
 
 int main() {
 
+	// delay(3); 
+	// clrscr();
+	// gotoxy(0,0);
+	// cout<<"h";
+
+	// gotoxy(10,10);
+	// cout<<"e";
+
 	list41();
 	list42();
 
@@ -12,7 +20,7 @@ void list41() {
 
 	list<Item> Itemlist;
 
-	//앞에 데이터 추가
+	
 	Item item1(1, 2000);
 	Itemlist.push_front(item1);
 
@@ -27,7 +35,7 @@ void list41() {
 
 	list<Item>::iterator iterEnd = Itemlist.end();
 	for (list<Item>::iterator iterPos = Itemlist.begin(); iterPos != iterEnd; ++iterPos) {
-		cout << "아이템 코드:" << iterPos->ItemCd << endl;
+		cout << "안녕0:" << iterPos->ItemCd << endl;
 	}
 
 
@@ -35,21 +43,21 @@ void list41() {
 
 	Item front_item = Itemlist.front();
 
-	cout << "아이템 코드: " << front_item.ItemCd << endl;
+	cout << "안녕: " << front_item.ItemCd << endl;
 
 	Itemlist.pop_back();
 
 	Item back_item = Itemlist.back();
-	cout << "아이템 코드: " << back_item.ItemCd << endl;
+	cout << "안녕 2: " << back_item.ItemCd << endl;
 
 	if (false == Itemlist.empty()) {
 		list<Item >::size_type Count = Itemlist.size();
-		cout << "남아 있는 아이템 개수: " << Count << endl;
+		cout << "안녕 3: " << Count << endl;
 	}
 
 	Itemlist.clear();
 	list<Item > ::size_type Count = Itemlist.size();
-	cout << "남아 있는 아이템 개수 : " << Count << endl;
+	cout << "안녕 4 : " << Count << endl;
 }
 void list42() {
 	list<int> list1;
@@ -57,7 +65,7 @@ void list42() {
 	list1.push_back(20);
 	list1.push_back(30);
 
-	cout << "삽입테스트 1" << endl;
+	cout << "안녕5" << endl;
 
 	list<int>::iterator iterInsertPos = list1.begin();
 	list1.insert(iterInsertPos, 100);
@@ -66,7 +74,7 @@ void list42() {
 	for (list<int>::iterator iterPos = list1.begin(); iterPos != iterEnd; ++iterPos) {
 		cout << "list 1 : " << *iterPos << endl;
 	}
-	cout << endl << "삽입 테스트 2 " << endl;
+	cout << endl << "안녕 6 " << endl;
 
 	iterInsertPos = list1.begin();
 	++iterInsertPos;
@@ -76,7 +84,7 @@ void list42() {
 	for (list<int>::iterator iterPos = list1.begin(); iterPos != iterEnd; ++iterPos) {
 		cout << "list 1 : " << *iterPos << endl;
 	}
-	cout << endl << "삽입 테스트 3" << endl;
+	cout << endl << "안녕 7" << endl;
 
 	list<int> list2;
 	list2.push_back(1000);
