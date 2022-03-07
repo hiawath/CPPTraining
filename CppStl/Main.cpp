@@ -1,103 +1,158 @@
-#include "Main.h"
-void list41();
-void list42();
+#include <stdio.h>
+#include <conio.h>
+#include "cursor.h"
+#include "main.h"
 
 int main() {
 
-	// delay(3); 
-	// clrscr();
-	// gotoxy(0,0);
-	// cout<<"h";
-
-	// gotoxy(10,10);
-	// cout<<"e";
-
-	list41();
-	list42();
-
-}
-void list41() {
-
-	list<Item> Itemlist;
-
+	prepareStage();
+	findMypositin();
+	clearScreen();
+	while (gameLoop() && gameOver()) {
+		redraw();
+	}
 	
-	Item item1(1, 2000);
-	Itemlist.push_front(item1);
-
-	Item item2(2, 1000);
-	Itemlist.push_front(item2);
-
-	Item item3(3, 3000);
-	Itemlist.push_back(item3);
-
-	Item item4(4, 4500);
-	Itemlist.push_back(item4);
-
-	list<Item>::iterator iterEnd = Itemlist.end();
-	for (list<Item>::iterator iterPos = Itemlist.begin(); iterPos != iterEnd; ++iterPos) {
-		cout << "¾È³ç0:" << iterPos->ItemCd << endl;
-	}
+	showcursor(TRUE);
+	return 0;
 
 
-	Itemlist.pop_front();
-
-	Item front_item = Itemlist.front();
-
-	cout << "¾È³ç: " << front_item.ItemCd << endl;
-
-	Itemlist.pop_back();
-
-	Item back_item = Itemlist.back();
-	cout << "¾È³ç 2: " << back_item.ItemCd << endl;
-
-	if (false == Itemlist.empty()) {
-		list<Item >::size_type Count = Itemlist.size();
-		cout << "¾È³ç 3: " << Count << endl;
-	}
-
-	Itemlist.clear();
-	list<Item > ::size_type Count = Itemlist.size();
-	cout << "¾È³ç 4 : " << Count << endl;
 }
-void list42() {
-	list<int> list1;
 
-	list1.push_back(20);
-	list1.push_back(30);
+void prepareStage() {
+	showcursor(FALSE);
+	memcpy(gameStage, baseStage, sizeof(gameStage));
+}
 
-	cout << "¾È³ç5" << endl;
-
-	list<int>::iterator iterInsertPos = list1.begin();
-	list1.insert(iterInsertPos, 100);
-
-	list<int>::iterator iterEnd = list1.end();
-	for (list<int>::iterator iterPos = list1.begin(); iterPos != iterEnd; ++iterPos) {
-		cout << "list 1 : " << *iterPos << endl;
+void findMypositin() {
+	for (myY = 0; myY < ROW_MAX; myY++)
+	{
+		for (myX = 0; myX < COL_MAX-1; myX++)
+		{
+			if (gameStage[myY][myX] == '@')
+			{
+				gameStage[myY][myX] = ' ';
+				return;
+			}
+		}
 	}
-	cout << endl << "¾È³ç 6 " << endl;
 
-	iterInsertPos = list1.begin();
-	++iterInsertPos;
-	list1.insert(iterInsertPos, 2, 200);
+}
+int gameLoop() {
+	
+	
 
-	iterEnd = list1.end();
-	for (list<int>::iterator iterPos = list1.begin(); iterPos != iterEnd; ++iterPos) {
-		cout << "list 1 : " << *iterPos << endl;
+	int dx = 0, dy = 0;
+
+	int ch = _getch();
+	if (ch==0xE0 || ch ==0)
+	{
+		putsxy(45, 7, "    ");
+		ch = _getch();
+
+		switch (ch)
+		{
+		case LEFT:
+			dx = -1;
+			break;
+		case RIGHT:
+			dx = 1;
+			break;
+		case UP:
+			dy = -1;
+			break;
+		case DOWN:
+			dy = 1;
+			break;
+		default:
+			break;
+		}
+
+		//
+		if (gameStage[myY+dy][myX+dx]!='#')
+		{ 
+			
+			// 
+			if (gameStage[myY + dy][myX + dx] == 'O')
+			{
+				// 
+				if (gameStage[myY + dy * 2][myX + dx * 2] == ' ' || gameStage[myY + dy * 2][myX + dx * 2] == '.') {
+					
+					//UNDO
+					memcpy(undoStage, gameStage, sizeof(gameStage));
+					undoX = myX;
+					undoY = myY;
+					
+					if (baseStage[myY+dy][myX+dx]=='.') {
+						gameStage[myY + dy][myX + dx] = '.';
+					}
+					else {
+						gameStage[myY + dy][myX + dx] = ' ';
+					}
+
+					gameStage[myY + dy*2][myX + dx*2] = 'O';
+				}
+				else {
+					dx = dy = 0;
+				}
+
+			}
+
+			//
+			myX += dx;
+			myY += dy;
+
+		}
+
+		
+
+		
 	}
-	cout << endl << "¾È³ç 7" << endl;
-
-	list<int> list2;
-	list2.push_back(1000);
-	list2.push_back(2000);
-	list2.push_back(3000);
-
-	iterInsertPos = list1.begin();
-	list1.insert(++iterInsertPos, list2.begin(), list2.end());
-
-	iterEnd = list1.end();
-	for (list<int>::iterator iterPos = list1.begin();
-		iterPos != iterEnd;
-		++iterPos) {
-		cout << "list 1 : " << *iterPos << endl;
+	else if (ch == ESC) {
+		return 0;
 	}
+	else if (ch == UNDO ||ch==undo)
+	{
+		putsxy(45, 7, "UNDO");
+		memcpy(gameStage, undoStage, sizeof(gameStage));
+		myX = undoX;
+		myY = undoY;
+		redraw();
+	}
+	return 1;
+}
+void redraw()
+{
+	for (int y = 0; y < ROW_MAX; y++) {
+		putsxy(0, y, gameStage[y]);
+		
+	}
+	putchxy(myX, myY, '@');
+
+}
+void clearScreen()
+{
+	clrscr();
+	putsxy(45, 2, "Start");
+	putsxy(45, 4, "ESC : Exit");
+}
+int gameOver() {
+	BOOL end = TRUE;
+	for (int y = 0; y < ROW_MAX; y++)
+	{
+		for (int x = 0; x < COL_MAX; x++)
+		{
+			if (gameStage[y][x]=='.')
+			{
+				end = FALSE;
+			}
+		}
+	}
+
+	if (end) {
+		clrscr();
+		putsxy(10, 10, "END");
+		delay(2000);
+		return 0;
+	}
+	return 1;
 }
