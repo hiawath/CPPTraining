@@ -20,6 +20,8 @@ SET ( SRC_FILES
         Swap.cpp
         SwapArray.cpp
         Cast.cpp
+        TempArray.cpp
+        Util.cpp
         )
  
 # 공통 컴파일러

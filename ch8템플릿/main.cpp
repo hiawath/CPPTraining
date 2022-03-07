@@ -39,7 +39,7 @@ int main() {
 	swaparray(ccc, ddd, sizeof(c) / sizeof(ccc[0]));
 	//printf("after c = %s,d = %s\n", ccc, ddd);
 
-	**/
+	
 
 	PosValue<int> iv(10, 10, 2);
 	PosValue<char> cv(25, 5, 'C');
@@ -47,7 +47,7 @@ int main() {
 	iv.outvalue();
 	cv.outvalue();
 	dv.outvalue();
-
+**/
 
 	Util u;
 	int a = 3, b = 4;
