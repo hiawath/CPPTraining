@@ -143,15 +143,21 @@
     <ClInclude Include="cursor.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Max.h" />
+    <ClInclude Include="PosValueTemp.h" />
     <ClInclude Include="Swap.h" />
     <ClInclude Include="SwapArray.h" />
+    <ClInclude Include="TempArray.h" />
+    <ClInclude Include="Util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cast.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Max.cpp" />
+    <ClCompile Include="PosValueTemp.cpp" />
     <ClCompile Include="Swap.cpp" />
     <ClCompile Include="SwapArray.cpp" />
+    <ClCompile Include="TempArray.cpp" />
+    <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
